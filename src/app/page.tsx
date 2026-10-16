@@ -992,6 +992,10 @@ export default function SistemPenghakimanPBLS5() {
     [rubric]
   );
 
+  // === TAMBAHAN KOD PENYELAMAT HYDRATION VERCEL ===
+  // Ini memastikan Vercel merender web sebagai 'Client-Only' dan tidak mengamuk dengan tarikh atau localStorage
+  if (!isLoaded) return null;
+
   // ============================================================================
   // RENDER UI
   // ============================================================================
