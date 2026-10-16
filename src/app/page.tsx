@@ -701,6 +701,7 @@ export default function SistemPenghakimanPBLS5() {
     DEFAULT_JPN_SABAH_RUBRIC
   );
   const [isLoaded, setIsLoaded] = useState(false);
+  const [tarikhSemasa, setTarikhSemasa] = useState("");
 
   // State Penapis & Carian
   const [selectedCategory, setSelectedCategory] = useState<string>("SEMUA");
@@ -747,6 +748,7 @@ export default function SistemPenghakimanPBLS5() {
       console.error("Ralat membaca localStorage:", err);
     }
     setIsLoaded(true);
+    setTarikhSemasa(new Date().toLocaleDateString("ms-MY"));
   }, []);
 
   // Simpan perubahan ke localStorage secara reaktif
@@ -1229,7 +1231,7 @@ export default function SistemPenghakimanPBLS5() {
                     <strong>
                       {selectedPPD === "SEMUA" ? "SEMUA PPD SABAH" : selectedPPD}
                     </strong>{" "}
-                    | Tarikh Cetakan: {isLoaded ? new Date().toLocaleDateString("ms-MY") : ""}
+                    | Tarikh Cetakan: {tarikhSemasa}
                   </p>
                 </div>
               </div>
