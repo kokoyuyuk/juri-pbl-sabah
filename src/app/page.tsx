@@ -1229,7 +1229,7 @@ export default function SistemPenghakimanPBLS5() {
                     <strong>
                       {selectedPPD === "SEMUA" ? "SEMUA PPD SABAH" : selectedPPD}
                     </strong>{" "}
-                    | Tarikh Cetakan: {new Date().toLocaleDateString("ms-MY")}
+                    | Tarikh Cetakan: {isLoaded ? new Date().toLocaleDateString("ms-MY") : ""}
                   </p>
                 </div>
               </div>
